@@ -4,22 +4,17 @@ class Queue
     @array = []
   end
 
-  def enqueue(el)
+  def enqueue(el) #puts element into the end of the arr
     array.push(el)
     el
   end
 
-  def dequeue
+  def dequeue #removes first element
     array.shift
   end
 
   def peek
-    array.first
+    array.first #looks at the next element that is queue
   end
-
-  private
-
-  attr_reader :array
   
-
 end
