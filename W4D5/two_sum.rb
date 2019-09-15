@@ -66,32 +66,66 @@ end
 # O(n) time complexity
 # 0(n) space complexity
 
+#method checks if the difference in what we're looking for is not in the hash. And then check adds it if its not there.
+  #need both pair of numbers in order for the problem to be true.
+
 def two_sum?(arr, target)
-  complements = {}
-
-  arr.each do |el|
-    return true if complements[target - el]
-    complements[el] = true
+  hash = {}
+  arr.each do |num|
+    dif = target - num 
+    return true if hash[dif] #checks if the difference is
+    hash[num] = true
   end
-
   false
 end
 
-def two_sum_indices(arr, target_sum)
-  complements = {}
-  arr.each_with_index do |el, i|
-    complement, j = complements[target_sum - el] # these will both be nil if the complement doesn't exist
-    return [i, j] if complement
+# def two_sum?(arr, target)
+#   complements = {}
 
-    complements[el] = [el, i]
+#   arr.each do |el|
+#     return true if complements[target - el]
+#     complements[el] = true
+#   end
+
+#   false
+# end
+
+# def two_sum_indices(arr, target)
+#   hash = {}
+#   arr.each_with_index do |num, i|
+#     diff = 
+# end
+
+# def two_sum_indices(arr, target_sum)
+#   complements = {}
+#   arr.each_with_index do |el, i|
+#     complement, j = complements[target_sum - el] # these will both be nil if the complement doesn't exist
+#     p "this is the complement"
+#     p complements[target_sum - el]
+#     return [i, j] if complement
+
+#     complements[el] = [el, i]
+#   end
+#   nil
+# end
+
+
+def two_sum_indices(arr, target)
+  differences = {}
+  indices = []
+
+  arr.each_with_index do |num, i|
+    diff = target - num
+    indices << [differences[diff], i ] if differences.has_key?(diff)
+    differences[num] = i
   end
-  nil
+  indices
 end
 
 arr = [0, 1, 5, 7, 4]
-p two_sum?(arr, 6) # => should be true
-p "-------"
-p two_sum?(arr, 10) # => should be false
+# p two_sum?(arr, 6) # => should be true
+# p "-------"
+# p two_sum?(arr, 10) # => should be false
 
-p two_sum_indices(arr, 6)
-p two_sum_indices(arr, 10)
+p two_sum_indices(arr, 6) # true so [2, 1]
+# p two_sum_indices(arr, 10) # false so nil
