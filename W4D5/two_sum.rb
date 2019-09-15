@@ -1,4 +1,4 @@
-def bad_two_sum?(arr, target)
+def bad_two_sum?(arr, target) #time complexity : n^2
   (0...arr.length).each do |i|
     (i + 1...arr.length).each do |i2|
       return true if arr[i] + arr[i2] == target
@@ -53,18 +53,45 @@ end
 #   nil
 # end
 
+# def two_sum?(arr, target)
+#   hash = Hash.new(0)
+#   arr.each do |num|
+#     needed = target - num
+#     return true if hash.has_key?(num) && target == num * 2
+#     hash[num] += needed
+#     return true if hash.has_key?(hash[num]) && num != hash[num]
+#   end
+#   false
+
+# O(n) time complexity
+# 0(n) space complexity
+
 def two_sum?(arr, target)
-  hash = Hash.new(0)
-  arr.each do |num|
-    needed = target - num
-    return true if hash.has_key?(num) && target == num * 2
-    hash[num] += needed
-    return true if hash.has_key?(hash[num]) && num != hash[num]
+  complements = {}
+
+  arr.each do |el|
+    return true if complements[target - el]
+    complements[el] = true
   end
+
   false
+end
+
+def two_sum_indices(arr, target_sum)
+  complements = {}
+  arr.each_with_index do |el, i|
+    complement, j = complements[target_sum - el] # these will both be nil if the complement doesn't exist
+    return [i, j] if complement
+
+    complements[el] = [el, i]
+  end
+  nil
 end
 
 arr = [0, 1, 5, 7, 4]
 p two_sum?(arr, 6) # => should be true
 p "-------"
 p two_sum?(arr, 10) # => should be false
+
+p two_sum_indices(arr, 6)
+p two_sum_indices(arr, 10)
