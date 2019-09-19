@@ -69,16 +69,6 @@ end
 #method checks if the difference in what we're looking for is not in the hash. And then check adds it if its not there.
   #need both pair of numbers in order for the problem to be true.
 
-def two_sum?(arr, target)
-  hash = {}
-  arr.each do |num|
-    dif = target - num 
-    return true if hash[dif] #checks if the difference is
-    hash[num] = true
-  end
-  false
-end
-
 # def two_sum?(arr, target)
 #   complements = {}
 
@@ -109,23 +99,31 @@ end
 #   nil
 # end
 
+def two_sum?(arr, target)
+  hash = {}
+  arr.each do |num|
+    dif = target - num 
+    return true if hash[dif] #checks if the difference is
+    hash[num] = true
+  end
+  false
+end
 
 def two_sum_indices(arr, target)
-  differences = {}
-  indices = []
-
+  hash = {}
+  result = []
   arr.each_with_index do |num, i|
-    diff = target - num
-    indices << [differences[diff], i ] if differences.has_key?(diff)
-    differences[num] = i
+    dif = target - num
+    result << [arr[dif], i] if hash.has_key?(dif)
+    hash[num] = i
   end
-  indices
+  return nil if result.empty?
+  result
 end
 
 arr = [0, 1, 5, 7, 4]
-# p two_sum?(arr, 6) # => should be true
-# p "-------"
-# p two_sum?(arr, 10) # => should be false
-
+p two_sum?(arr, 6) # => should be true
+p two_sum?(arr, 10) # => should be false
+p "-----"
 p two_sum_indices(arr, 6) # true so [2, 1]
-# p two_sum_indices(arr, 10) # false so nil
+p two_sum_indices(arr, 10) # false so nil
