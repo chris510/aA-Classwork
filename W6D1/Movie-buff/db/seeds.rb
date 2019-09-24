@@ -5,21 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 Actor.destroy_all
 Movie.destroy_all
 Casting.destroy_all
 
-ActiveRecord::Base.connection.reset_pk_sequence!('actors')
-ActiveRecord::Base.connection.reset_pk_sequence!('movies')
-ActiveRecord::Base.connection.reset_pk_sequence!('castings')
+ApplicationRecord.connection.reset_pk_sequence!('actors')
+ApplicationRecord.connection.reset_pk_sequence!('movies')
+ApplicationRecord.connection.reset_pk_sequence!('castings')
 
-ActiveRecord::Base.transaction do
-	puts "Preparing #{Rails.env} environment"
+ApplicationRecord.transaction do
 	puts 'Loading actors...'
 	require_relative 'data/actors.rb'
 	puts 'Loading movies...'
 	require_relative 'data/movies.rb'
 	puts 'Loading castings...'
 	require_relative 'data/castings.rb'
-	puts "Done with #{Rails.env} environment!"
+	puts 'Done!'
 end

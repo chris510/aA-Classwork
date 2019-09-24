@@ -10,19 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170711165416) do
+ActiveRecord::Schema.define(version: 20170711160807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "actors", force: :cascade do |t|
     t.string "name", null: false
+    t.index ["name"], name: "index_actors_on_name"
   end
 
   create_table "castings", force: :cascade do |t|
-    t.integer "movie_id", null: false
     t.integer "actor_id", null: false
+    t.integer "movie_id", null: false
     t.integer "ord", null: false
+    t.index ["actor_id", "movie_id"], name: "index_castings_on_actor_id_and_movie_id", unique: true
     t.index ["actor_id"], name: "index_castings_on_actor_id"
     t.index ["movie_id"], name: "index_castings_on_movie_id"
   end
@@ -35,7 +37,6 @@ ActiveRecord::Schema.define(version: 20170711165416) do
     t.integer "director_id", null: false
     t.index ["director_id"], name: "index_movies_on_director_id"
     t.index ["title"], name: "index_movies_on_title"
-    t.index ["yr"], name: "index_movies_on_yr"
   end
 
 end
