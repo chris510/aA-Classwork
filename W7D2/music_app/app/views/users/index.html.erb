@@ -1,0 +1,5 @@
+<form action="<%= users_url %>" method = "get">
+<ul><%@users.each do |user| %>
+  <li><%= user.email %></li>
+    <%end%></ul> 
+</form>

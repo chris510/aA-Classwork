@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  band_id: 1
+  title: MyString
+  year: 1
+  record_id: 1
+  type: false
+
+two:
+  band_id: 1
+  title: MyString
+  year: 1
+  record_id: 1
+  type: false

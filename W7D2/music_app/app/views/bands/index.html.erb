@@ -1,0 +1,5 @@
+<form action="<%= bands_url %>" method = "get">
+<ul><%@bands.each do |band| %>
+  <li><%= band.name %></li>
+    <%end%></ul> 
+</form>
