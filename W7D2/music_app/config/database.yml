@@ -23,3 +23,9 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+test: 
+  adapter: postgresql
+  database: music_db_test
+  pool: 5
+  timeout: 5000
