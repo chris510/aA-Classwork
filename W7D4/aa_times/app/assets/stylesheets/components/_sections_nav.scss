@@ -1,0 +1,16 @@
+.lisa_trips {
+  display: flex;
+  justify-content: space-around;
+  padding: 3px;
+  margin: 2px;
+}
+
+a {
+  text-decoration:  none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+  background-color: lightgray;
+}
