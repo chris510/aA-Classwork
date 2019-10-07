@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191007153721) do
+ActiveRecord::Schema.define(version: 20191007154704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,15 +27,12 @@ ActiveRecord::Schema.define(version: 20191007153721) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "toys_tables", force: :cascade do |t|
+  create_table "toys", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "toyable_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "toyable_type"
-    t.integer "#<ActiveRecord::ConnectionAdapters::PostgreSQL::TableDefinition"
-    t.index ["name"], name: "index_toys_tables_on_name", unique: true
-    t.index ["toyable_id"], name: "index_toys_tables_on_toyable_id"
+    t.string "toyable_type"
+    t.bigint "toyable_id"
+    t.index ["name", "toyable_id", "toyable_type"], name: "index_toys_on_name_and_toyable_id_and_toyable_type", unique: true
+    t.index ["toyable_type", "toyable_id"], name: "index_toys_on_toyable_type_and_toyable_id"
   end
 
 end
