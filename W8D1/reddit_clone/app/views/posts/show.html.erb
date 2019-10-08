@@ -1,0 +1,28 @@
+<h2>Post Show</h2>
+
+<%= @post.title %>
+<br>
+<%= @post.url %>
+<br>
+<%= @post.content %>
+<br>
+<%= @post.author.username %>
+<br>
+
+<br>
+<% top_level = @post.comments.where(parent_comment_id: nil) %>
+  <% top_level.each do |comment| %>
+    <a href="<%= comment_url(comment) %>"><%= comment.content %></a>
+    <br>
+  <% end %>
+<br>
+
+<form action="<%= new_comment_url %>" method="get">
+  <%= auth_token %>
+  <input type="hidden" name="post_id" value="<%=@post.id%>">
+  <input type="submit" value="New Comment">
+</form>
+
+
+
+

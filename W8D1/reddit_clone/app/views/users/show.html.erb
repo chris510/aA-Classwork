@@ -1,0 +1,19 @@
+
+<% @user.subs.each do |sub| %>
+  <ul>
+    <li>
+        <%= sub.description %>
+        <br>
+        <a href="<%= sub_url(sub) %>"><%= sub.title %></a>
+    </li>  
+  </ul>
+<% end %>
+
+<% @user.posts.each do |post| %>
+  <ul>
+    <li>
+        <%= post.title %>
+        <%= post.description %>
+    </li>  
+  </ul>
+<% end %>

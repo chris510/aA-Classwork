@@ -1,0 +1,22 @@
+<h2>New Reply</h2>
+<form action="<%= new_comment_url %>" method="get">
+  <%= auth_token %>
+  <input type="hidden" name="parent_comment_id" value="<%=@comment.id%>">
+  <input type="hidden" name="post_id" value="<%=@comment.post_id%>">
+  <input type="submit" value="New reply">
+</form>
+
+
+<br>
+<% replies = Comment.where('parent_comment_id = @comment.parent_comment_id') %>
+  <% replies.each do |comment| %>
+    <a href="<%= comment_url(comment) %>"><%= comment.content %></a>
+    <br>
+  <% end %>
+<br>
+
+<% @comment.child_comments.each do |comment| %>
+  <%= comment.content %>
+<% end %>
+
+

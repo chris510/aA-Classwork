@@ -1,0 +1,23 @@
+
+<h2>Create Post</h2>
+
+<form action="<%= sub_posts_url(params[:sub_id]) %>" method="POST">
+  <%= auth_token %>
+  <label>
+    Title:
+    <input type="text" name="post[title]" value="">
+  </label>
+  <br>
+  <label>
+    URL:
+    <input type="text" name="post[url]" value="">
+  </label>
+  <br>
+  <label>
+    Content:
+    <textarea name="post[content]" cols="30" rows="10"></textarea>
+  </label>
+  <br>
+  <input type="submit" value="Sign Up">
+ 
+</form>

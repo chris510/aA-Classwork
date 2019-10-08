@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RedditClone</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <%= flash[:errors] if flash[:errors] %>
+    <% if logged_in? %>
+      <%= current_user.username %>
+      <br>
+      <form action="<%= session_url %>" method="post">
+      <%= auth_token %>
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Log Out">
+      </form>
+      <ul>
+        <li><a href="<%= new_sub_url %>">Create Sub</a></li>
+        <li><a href="<%= subs_url %>">My Subs</a></li>
+      </ul>
+    <% else %>
+      <a href="<%= new_user_url %>">Sign Up</a>
+      <br>
+      <a href="<%= new_session_url %>">Sign In</a>
+    <% end %>  
+    <%= yield %>
+  </body>
+</html>

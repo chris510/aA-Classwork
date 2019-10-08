@@ -1,0 +1,23 @@
+<h2>Edit Post</h2>
+
+<form action="<%= post_url(@post) %>" method="POST">
+  <%= auth_token %>
+  <input type="hidden" name="_method" value="PATCH">
+  <label>
+    Title:
+    <input type="text" name="post[title]" value="<%= @post.title %>">
+  </label>
+  <br>
+  <label>
+    URL:
+    <input type="text" name="post[url]" value="<%= @post.url %>">
+  </label>
+  <br>
+  <label>
+    Content:
+    <textarea name="post[content]" cols="30" rows="10" value="<%= @post.content %>"></textarea>
+  </label>
+  <br>
+  <input type="submit" value="Update Post">
+ 
+</form>

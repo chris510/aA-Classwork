@@ -1,0 +1,21 @@
+<%  if params[:parent_comment_id].nil? %>
+  <h2>New Comment</h2>
+  <form action="<%= post_comments_url(params[:post_id]) %>" method="POST">
+    <%= auth_token %>
+    <label>Content
+      <input type="text" name="comment[content]">
+    </label>
+    <br>
+    <input type="submit" value="Add Comment">
+  </form>
+<% else %>
+  <form action="<%= comment_comments_url(params[:parent_comment_id]) %>" method="POST">
+    <%= auth_token %>
+    <label>Content
+      <input type="text" name="comment[content]">
+    </label>
+    <br>
+    <input type="submit" value="Reply to Comment">
+  </form>
+<% end %>
+

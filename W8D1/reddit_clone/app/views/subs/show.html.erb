@@ -1,0 +1,35 @@
+<%= @sub.title %>
+
+<% @sub.posts.each do |post| %>
+  <ul>
+    <li><%= post.title %></li>
+    <br>
+    <li><%= post.content %></li>
+  </ul>
+  <br>
+  <form action="<%= post_url(post) %>" method="POST">
+    <%= auth_token %>
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="params[sub_id]" value="<%=@sub.id%>">
+    <input type="submit" value="Delete Post">
+  </form> 
+  <br>
+  <form action="<%= edit_post_url(post)%>" method="get">
+    <%= auth_token %>
+      <input type="submit" value="Edit Post">
+  </form>
+<% end %>
+
+<form action="<%= new_post_url %>" method="get">
+  <%= auth_token %>
+  <input type="hidden" name="sub_id" value="<%=@sub.id%>">
+  <input type="submit" value="New Post">
+</form>
+
+<ul> 
+  <% current_user.posts.each do |post| %>
+    <li><a href="<%= post_url(post) %>"> <%= post.title %></a></li>
+    <br>
+
+  <% end %>
+</ul>
