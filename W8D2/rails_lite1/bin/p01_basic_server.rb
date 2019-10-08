@@ -4,7 +4,8 @@ app = Proc.new do |env|
   req = Rack::Request.new(env)
   res = Rack::Response.new
   res['Content-Type'] = "text/html"
-  res.write(req.path)
+  MyController.new.execute(req, res)
+  # res.write(req.path)
   res.finish
 end
 
