@@ -1,0 +1,15 @@
+/* PHASE 4: Footer */
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100px;
+  width: 900px;
+  margin: 0 auto;
+  background-color: #cccccc;
+  justify-content: space-between;
+}
+
+.footer-2 {
+  display: flex;
+
+}

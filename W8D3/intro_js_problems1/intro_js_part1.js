@@ -90,7 +90,6 @@ function fizzBuzz(array) {
   });
   return arr;
 }
-
 // isPrime
 // Define a function isPrime(number) that returns true if number is prime.Otherwise, false.Assume number is a positive integer.
 
