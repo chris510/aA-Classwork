@@ -12,8 +12,6 @@ class CommentsController < ApplicationController
     @comment.post_id = @prev_comment.post_id
     @comment.parent_comment_id = @prev_comment.id
     
-
-
     # if @comment.post_id.nil?
     #   @comment.post_id = params[:post_id]
     # else
