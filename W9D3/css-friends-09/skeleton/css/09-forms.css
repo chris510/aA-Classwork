@@ -1,0 +1,38 @@
+/* PHASE 9: Forms */
+.input {
+  display: flex;
+}
+
+.post-title {
+  border: 2px black solid;
+  max-height: 30px;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+.post-text {
+  border: 2px black solid;
+  background: blue;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+.post-box {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  border: 2px black solid;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.submit-button {
+  display: inline-block;
+  width: 20%;
+  background: green;
+  padding: 5px;
+  margin: 0px 0px 10px 20px;
+  border: 2px black solid;
+  border-radius: 5px;;
+  
+}

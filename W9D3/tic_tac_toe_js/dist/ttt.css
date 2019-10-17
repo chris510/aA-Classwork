@@ -1,0 +1,49 @@
+.ttt {
+  width: 500px;
+  height: 500px;
+  position: fixed;
+}
+.h3 {
+  position: fixed;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0px;
+}
+
+li {
+  background: gray;
+}
+
+.square {
+  display: flex;
+  flex-wrap: wrap-reverse ;
+  justify-content: center;
+  outline: 3px solid black;
+  font-size: 105px;
+  width: 100px;
+  height: 100px;
+  transition: outline 0.5s, background-color 0.5s;
+  cursor: pointer;
+  background-color: gray;
+  list-style: none;
+}
+
+.square:hover {
+  background: yellow;
+}
+
+.click {
+  background: white;
+}
+
+.x {
+  color: blue;
+}
+
+.o {
+  color: red;
+}
