@@ -114,9 +114,135 @@ document.addEventListener('DOMContentLoaded', function () {
   !*** ./calculator.jsx ***!
   \************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/calculator.jsx: Unexpected token (6:24)\n\n\u001b[0m \u001b[90m 4 | \u001b[39m  constructor(props){\u001b[0m\n\u001b[0m \u001b[90m 5 | \u001b[39m    \u001b[36msuper\u001b[39m(props)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 | \u001b[39m    \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mstate \u001b[33m=\u001b[39m { num1 \u001b[33m=\u001b[39m \u001b[32m''\u001b[39m\u001b[33m,\u001b[39m num2 \u001b[33m=\u001b[39m \u001b[32m''\u001b[39m\u001b[33m,\u001b[39m result\u001b[33m:\u001b[39m \u001b[35m0\u001b[39m}\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m   | \u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 7 | \u001b[39m    \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msetNum1 \u001b[33m=\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msetNum1\u001b[33m.\u001b[39mbind(\u001b[36mthis\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 8 | \u001b[39m  }\u001b[0m\n\u001b[0m \u001b[90m 9 | \u001b[39m\u001b[0m\n    at Object.raise (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:6420:17)\n    at Object.unexpected (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:7773:16)\n    at Object.parseMaybeAssign (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:8365:12)\n    at Object.parseMaybeAssign (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:8362:25)\n    at Object.parseExpression (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:8275:23)\n    at Object.parseStatementContent (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:10138:23)\n    at Object.parseStatement (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:10009:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:10585:25)\n    at Object.parseBlockBody (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:10572:10)\n    at Object.parseBlock (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:10556:10)\n    at Object.parseFunctionBody (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:9584:24)\n    at Object.parseFunctionBodyAndFinish (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:9554:10)\n    at Object.parseMethod (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:9508:10)\n    at Object.pushClassMethod (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:10987:30)\n    at Object.parseClassMemberWithIsStatic (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:10912:12)\n    at Object.parseClassMember (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:10851:10)\n    at withTopicForbiddingContext (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:10806:14)\n    at Object.withTopicForbiddingContext (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:9884:14)\n    at Object.parseClassBody (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:10783:10)\n    at Object.parseClass (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:10757:22)\n    at Object.parseStatementContent (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:10051:21)\n    at Object.parseStatement (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:10009:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:10585:25)\n    at Object.parseBlockBody (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:10572:10)\n    at Object.parseTopLevel (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:9940:10)\n    at Object.parse (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:11447:17)\n    at parse (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/node_modules/@babel/parser/lib/index.js:11483:38)\n    at parser (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/lib/transformation/normalize-file.js:168:34)\n    at normalizeFile (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/lib/transformation/normalize-file.js:102:11)\n    at runSync (/Users/christrinh/Desktop/aA/aA-Classwork/W10D2/react_calculator/node_modules/@babel/core/lib/transformation/index.js:44:43)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/react.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+
+
+var Calculator =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Calculator, _React$Component);
+
+  function Calculator(props) {
+    var _this;
+
+    _classCallCheck(this, Calculator);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Calculator).call(this, props));
+    _this.state = {
+      num1: "",
+      num2: "",
+      result: 0
+    };
+    _this.setNum1 = _this.setNum1.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.setNum2 = _this.setNum2.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.add = _this.add.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.subtract = _this.subtract.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
+  }
+
+  _createClass(Calculator, [{
+    key: "setNum1",
+    value: function setNum1(e) {
+      var num1 = e.target.value ? parseInt(e.target.value) : "";
+      this.setState({
+        num1: num1
+      });
+    }
+  }, {
+    key: "setNum2",
+    value: function setNum2(e) {
+      var num2 = e.target.value ? parseInt(e.target.value) : "";
+      this.setState({
+        num2: num2
+      });
+    }
+  }, {
+    key: "add",
+    value: function add(e) {
+      e.preventDefault();
+      var result = this.state.num1 * this.state.num2;
+      this.setState({
+        result: result
+      });
+    }
+  }, {
+    key: "subtract",
+    value: function subtract(e) {
+      e.preventDefault();
+      var result = this.state.num1 - this.state.num2;
+      this.setState({
+        result: result
+      });
+    }
+  }, {
+    key: "divide",
+    value: function divide(e) {
+      var result = this.state.num1 / this.state.num2;
+      e.preventDefault();
+    }
+  }, {
+    key: "multiply",
+    value: function multiply(e) {
+      e.preventDefault();
+      var result = this.state.num1 * this.state.num2;
+      this.setState({
+        result: result
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$state = this.state,
+          num1 = _this$state.num1,
+          num2 = _this$state.num2,
+          result = _this$state.result;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, result), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onChange: this.setNum1,
+        value: num1
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onChange: this.setNum2,
+        value: num2
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.clear
+      }, "Clear"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.add
+      }, "+"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.subtract
+      }, "-"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.multiply
+      }, "*"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.divide
+      }, "/"));
+    }
+  }]);
+
+  return Calculator;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Calculator);
 
 /***/ }),
 
