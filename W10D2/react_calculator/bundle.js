@@ -160,6 +160,8 @@ function (_React$Component) {
     _this.setNum2 = _this.setNum2.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.add = _this.add.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.subtract = _this.subtract.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.multiply = _this.multiply.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.divide = _this.divide.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -200,8 +202,11 @@ function (_React$Component) {
   }, {
     key: "divide",
     value: function divide(e) {
-      var result = this.state.num1 / this.state.num2;
       e.preventDefault();
+      var result = this.state.num1 / this.state.num2;
+      this.setState({
+        result: result
+      });
     }
   }, {
     key: "multiply",
@@ -227,7 +232,7 @@ function (_React$Component) {
         value: num2
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.clear
-      }, "Clear"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Clear"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.add
       }, "+"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.subtract

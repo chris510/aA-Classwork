@@ -1,0 +1,34 @@
+.clock {
+  display: flex;
+  justify-content: initial;
+  font-family: 'Liu Jian Mao Cao', cursive;
+  flex-direction: column;
+  font-size: 80px;
+  color: skyblue;
+  background-color: pink;
+  border: solid black 2px;
+  text-shadow: black;
+  box-shadow: black;
+  width: 60%;
+  border-radius: 10px;
+}
+
+.date {
+display: flex;
+justify-content: space-between;
+margin: 5px;
+}
+
+.time {
+display: flex;
+justify-content: space-between;
+margin: 5px;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  background: lightcyan;
+  width: 30%;
+}
+  
