@@ -1,0 +1,36 @@
+/* PHASE 12: Modal */
+.modal {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 2;
+  display: flex;
+}
+
+.modal-screen {
+  position: absolute;
+  height: 500px;
+  weight: 500px;
+  background-color: rgba(136, 64, 64, 0.8);
+  top: 100px;
+  bottom: 50px;
+  left: 300px;
+  right: 300px;
+}
+
+.modal-form {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  align-content: center;
+  z-index: 3;
+  /* background-color: blue; */
+}

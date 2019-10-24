@@ -1,0 +1,24 @@
+.board {
+  display: flex;
+  width: 50%;
+  align-items: center;
+}
+
+.tile {
+  background-color: rgb(216, 210, 210);
+  width: 40px;
+  height: 40px;
+  border-style: outset;
+  text-align: center;
+}
+
+.bombed {
+  border-style: inset;
+}
+
+.explored {
+  border-style: inset;
+}
+
+  .flagged {
+}
