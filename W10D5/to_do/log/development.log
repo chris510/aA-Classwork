@@ -1,0 +1,1492 @@
+  [1m[35m (353.1ms)[0m  [1m[35mCREATE DATABASE "todolist_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (252.2ms)[0m  [1m[35mCREATE DATABASE "todolist_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (17.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3178076251758880395)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateTodos (20191025204327)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "todos" ("id" bigserial primary key, "title" character varying NOT NULL, "body" character varying NOT NULL, "done" boolean DEFAULT FALSE NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191025204327_create_todos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (7.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191025204327"]]
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-10-25 20:44:38.846609"], ["updated_at", "2019-10-25 20:44:38.846609"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3178076251758880395)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTodo Create (1.6ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Thisiscool"], ["body", "thisisacoolbody"], ["created_at", "2019-10-25 20:47:03.711798"], ["updated_at", "2019-10-25 20:47:03.711798"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTodo Load (2.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mTodo Load (0.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mTodo Destroy (2.1ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTodo Create (0.6ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "anything"], ["body", "ne"], ["created_at", "2019-10-25 21:10:26.416540"], ["updated_at", "2019-10-25 21:10:26.416540"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "something"], ["body", "ne"], ["created_at", "2019-10-25 21:10:26.419407"], ["updated_at", "2019-10-25 21:10:26.419407"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "done", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "everything"], ["body", "NE"], ["done", true], ["created_at", "2019-10-25 21:10:26.421583"], ["updated_at", "2019-10-25 21:10:26.421583"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[36mTodo Load (0.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+Started GET "/" for ::1 at 2019-10-25 14:11:57 -0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/appacademy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 967ms (Views: 966.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 14:30:49 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 724ms (Views: 723.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 14:30:52 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 57ms (Views: 56.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 14:32:17 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 38ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 14:32:18 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 33ms (Views: 32.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 14:32:19 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 43ms (Views: 43.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 14:32:20 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 39ms (Views: 38.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 14:32:21 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 46ms (Views: 45.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 14:33:58 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 43ms (Views: 43.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 14:33:58 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 36ms (Views: 35.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 14:33:59 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 31ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 14:33:59 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 31ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 14:33:59 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 27ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 14:34:31 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 32ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 14:37:33 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 455ms (Views: 454.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 14:37:33 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 61ms (Views: 60.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 14:38:41 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 447ms (Views: 446.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 14:40:00 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 37ms (Views: 36.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/todos" for ::1 at 2019-10-25 14:43:57 -0700
+
+SyntaxError - syntax error, unexpected keyword_end
+  end
+  ^~~
+/Users/appacademy/Desktop/old/W10D4/todolist/app/controllers/api/todos_controller.rb:40: syntax error, unexpected end-of-input, expecting keyword_end:
+  app/controllers/api/todos_controller.rb:33:in `'
+
+Started GET "/api/todos" for ::1 at 2019-10-25 14:44:22 -0700
+
+SyntaxError - syntax error, unexpected keyword_end
+  end
+  ^~~
+/Users/appacademy/Desktop/old/W10D4/todolist/app/controllers/api/todos_controller.rb:40: syntax error, unexpected end-of-input, expecting keyword_end:
+  app/controllers/api/todos_controller.rb:33:in `'
+
+Started GET "/" for ::1 at 2019-10-25 14:45:02 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 525ms (Views: 525.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2019-10-25 14:45:22 -0700
+
+SyntaxError - syntax error, unexpected keyword_end
+  end
+  ^~~
+/Users/appacademy/Desktop/old/W10D4/todolist/app/controllers/api/todos_controller.rb:40: syntax error, unexpected end-of-input, expecting keyword_end:
+  app/controllers/api/todos_controller.rb:33:in `'
+
+Started GET "/" for ::1 at 2019-10-25 14:45:50 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 254ms (Views: 254.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2019-10-25 14:45:53 -0700
+
+SyntaxError - syntax error, unexpected keyword_end
+  end
+  ^~~
+/Users/appacademy/Desktop/old/W10D4/todolist/app/controllers/api/todos_controller.rb:40: syntax error, unexpected end-of-input, expecting keyword_end:
+  app/controllers/api/todos_controller.rb:33:in `'
+
+Started GET "/api/todos" for ::1 at 2019-10-25 14:46:22 -0700
+
+SyntaxError - syntax error, unexpected keyword_end
+  end
+  ^~~
+/Users/appacademy/Desktop/old/W10D4/todolist/app/controllers/api/todos_controller.rb:40: syntax error, unexpected end-of-input, expecting keyword_end:
+  app/controllers/api/todos_controller.rb:33:in `'
+
+Started GET "/" for ::1 at 2019-10-25 14:47:44 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 31ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2019-10-25 14:47:46 -0700
+
+SyntaxError - syntax error, unexpected keyword_end
+  end
+  ^~~
+/Users/appacademy/Desktop/old/W10D4/todolist/app/controllers/api/todos_controller.rb:40: syntax error, unexpected end-of-input, expecting keyword_end:
+  app/controllers/api/todos_controller.rb:33:in `'
+
+Started GET "/" for ::1 at 2019-10-25 14:49:06 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 39ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2019-10-25 14:49:07 -0700
+
+SyntaxError - syntax error, unexpected keyword_end
+  end
+  ^~~
+/Users/appacademy/Desktop/old/W10D4/todolist/app/controllers/api/todos_controller.rb:40: syntax error, unexpected end-of-input, expecting keyword_end:
+  app/controllers/api/todos_controller.rb:33:in `'
+
+Started GET "/" for ::1 at 2019-10-25 14:49:12 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 475ms (Views: 475.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2019-10-25 14:49:13 -0700
+
+SyntaxError - syntax error, unexpected keyword_end
+  end
+  ^~~
+/Users/appacademy/Desktop/old/W10D4/todolist/app/controllers/api/todos_controller.rb:40: syntax error, unexpected end-of-input, expecting keyword_end:
+  app/controllers/api/todos_controller.rb:33:in `'
+
+Started GET "/" for ::1 at 2019-10-25 14:52:26 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 65ms (Views: 64.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2019-10-25 14:52:27 -0700
+
+SyntaxError - syntax error, unexpected keyword_end
+  end
+  ^~~
+/Users/appacademy/Desktop/old/W10D4/todolist/app/controllers/api/todos_controller.rb:40: syntax error, unexpected end-of-input, expecting keyword_end:
+  app/controllers/api/todos_controller.rb:33:in `'
+
+Started GET "/" for ::1 at 2019-10-25 14:53:40 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 460ms (Views: 459.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 14:53:50 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 43ms (Views: 43.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2019-10-25 14:53:51 -0700
+
+SyntaxError - syntax error, unexpected keyword_end
+  end
+  ^~~
+/Users/appacademy/Desktop/old/W10D4/todolist/app/controllers/api/todos_controller.rb:40: syntax error, unexpected end-of-input, expecting keyword_end:
+  app/controllers/api/todos_controller.rb:33:in `'
+
+Started GET "/" for ::1 at 2019-10-25 14:55:18 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 59ms (Views: 58.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2019-10-25 14:55:20 -0700
+
+SyntaxError - syntax error, unexpected keyword_end
+  end
+  ^~~
+/Users/appacademy/Desktop/old/W10D4/todolist/app/controllers/api/todos_controller.rb:40: syntax error, unexpected end-of-input, expecting keyword_end:
+  app/controllers/api/todos_controller.rb:33:in `'
+
+Started GET "/" for ::1 at 2019-10-25 14:55:25 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 39ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2019-10-25 14:55:27 -0700
+
+SyntaxError - syntax error, unexpected keyword_end
+  end
+  ^~~
+/Users/appacademy/Desktop/old/W10D4/todolist/app/controllers/api/todos_controller.rb:40: syntax error, unexpected end-of-input, expecting keyword_end:
+  app/controllers/api/todos_controller.rb:33:in `'
+
+Started GET "/todos" for ::1 at 2019-10-25 14:55:37 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/todos"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/todos" for ::1 at 2019-10-25 14:55:43 -0700
+
+SyntaxError - syntax error, unexpected keyword_end
+  end
+  ^~~
+/Users/appacademy/Desktop/old/W10D4/todolist/app/controllers/api/todos_controller.rb:40: syntax error, unexpected end-of-input, expecting keyword_end:
+  app/controllers/api/todos_controller.rb:33:in `'
+
+Started POST "/__better_errors/36578c2e2fd92c8c/variables" for ::1 at 2019-10-25 14:55:43 -0700
+Started GET "/api/todos" for ::1 at 2019-10-25 14:56:20 -0700
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (2.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:8
+Completed 200 OK in 36ms (Views: 12.6ms | ActiveRecord: 19.5ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 14:56:25 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2019-10-25 14:56:26 -0700
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (1.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:8
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 14:56:40 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 57ms (Views: 56.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2019-10-25 14:56:41 -0700
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:8
+Completed 200 OK in 23ms (Views: 10.3ms | ActiveRecord: 8.0ms)
+
+
+Started POST "/api/todos" for ::1 at 2019-10-25 14:57:06 -0700
+Processing by Api::TodosController#create as JSON
+  Parameters: {"todo"=>{"id"=>"1", "title"=>"wash car", "body"=>"with soap", "done"=>"false"}}
+Completed 500 Internal Server Error in 221ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `todo_params' for #<Api::TodosController:0x00007fd99e65a1b0>
+Did you mean?  todos_params
+               to_param:
+  app/controllers/api/todos_controller.rb:12:in `create'
+
+Started POST "/api/todos" for ::1 at 2019-10-25 14:58:06 -0700
+Processing by Api::TodosController#create as JSON
+  Parameters: {"todo"=>{"id"=>"1", "title"=>"wash car", "body"=>"with soap", "done"=>"false"}}
+Completed 500 Internal Server Error in 329ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `todo_params' for #<Api::TodosController:0x00007fd99e49c2d8>
+Did you mean?  todos_params
+               to_param:
+  app/controllers/api/todos_controller.rb:12:in `create'
+
+Started GET "/" for ::1 at 2019-10-25 14:59:07 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 487ms (Views: 486.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2019-10-25 14:59:45 -0700
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (2.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:8
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 15:00:33 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 498ms (Views: 498.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2019-10-25 15:00:41 -0700
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:8
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/todos" for ::1 at 2019-10-25 15:01:02 -0700
+Processing by Api::TodosController#create as JSON
+  Parameters: {"todo"=>{"id"=>"6", "title"=>"wash car", "body"=>"with soap", "done"=>"false"}}
+Completed 500 Internal Server Error in 229ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `todo_params' for #<Api::TodosController:0x00007fd99f582cc8>
+Did you mean?  todos_params
+               to_param:
+  app/controllers/api/todos_controller.rb:12:in `create'
+
+Started GET "/" for ::1 at 2019-10-25 15:02:36 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 469ms (Views: 469.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/todos" for ::1 at 2019-10-25 15:02:51 -0700
+Processing by Api::TodosController#create as JSON
+  Parameters: {"id"=>"6", "title"=>"wash car", "body"=>"with soap", "done"=>"false"}
+Completed 500 Internal Server Error in 298ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `todo_params' for #<Api::TodosController:0x00007fd99942c460>
+Did you mean?  todos_params
+               to_param:
+  app/controllers/api/todos_controller.rb:12:in `create'
+
+Started GET "/api/todos" for ::1 at 2019-10-25 15:03:27 -0700
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (1.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:8
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 15:03:48 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 39ms (Views: 38.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/todos" for ::1 at 2019-10-25 15:04:05 -0700
+Processing by Api::TodosController#create as JSON
+  Parameters: {"todo"=>{"id"=>"6", "title"=>"wash car", "body"=>"with soap", "done"=>"false"}}
+Completed 500 Internal Server Error in 226ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `todo_params' for #<Api::TodosController:0x00007fd99e793a90>
+Did you mean?  todos_params
+               to_param:
+  app/controllers/api/todos_controller.rb:12:in `create'
+
+Started GET "/" for ::1 at 2019-10-25 15:05:02 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 22ms (Views: 22.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 15:05:03 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 28ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/todos" for ::1 at 2019-10-25 15:05:15 -0700
+Processing by Api::TodosController#create as JSON
+  Parameters: {"todo"=>{"id"=>"6", "title"=>"wash car", "body"=>"with soap", "done"=>"false"}}
+Started GET "/" for ::1 at 2019-10-25 15:06:15 -0700
+Started GET "/" for ::1 at 2019-10-25 15:06:15 -0700
+Started GET "/" for ::1 at 2019-10-25 15:06:15 -0700
+Completed 500 Internal Server Error in 63225ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `todo_params' for #<Api::TodosController:0x00007fd99974c780>
+Did you mean?  todos_params
+               to_param:
+  app/controllers/api/todos_controller.rb:13:in `create'
+
+Processing by StaticPagesController#root as HTML
+Processing by StaticPagesController#root as HTML
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 105ms (Views: 104.7ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 110ms (Views: 109.7ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 109ms (Views: 108.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/todos" for ::1 at 2019-10-25 15:06:45 -0700
+Processing by Api::TodosController#create as JSON
+  Parameters: {"todo"=>{"id"=>"6", "title"=>"wash car", "body"=>"with soap", "done"=>"false"}}
+Completed 500 Internal Server Error in 257ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `todo_params' for #<Api::TodosController:0x00007fd99f389b10>
+Did you mean?  todos_params
+               to_param:
+  app/controllers/api/todos_controller.rb:13:in `create'
+
+Started GET "/" for ::1 at 2019-10-25 15:07:10 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 69ms (Views: 69.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/todos" for ::1 at 2019-10-25 15:07:14 -0700
+Processing by Api::TodosController#create as JSON
+  Parameters: {"todo"=>{"id"=>"6", "title"=>"wash car", "body"=>"with soap", "done"=>"false"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/todos_controller.rb:14
+  [1m[36mTodo Create (1.3ms)[0m  [1m[32mINSERT INTO "todos" ("id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 6], ["title", "wash car"], ["body", "with soap"], ["created_at", "2019-10-25 22:07:14.956479"], ["updated_at", "2019-10-25 22:07:14.956479"]]
+  ↳ app/controllers/api/todos_controller.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/todos_controller.rb:14
+Completed 200 OK in 43ms (Views: 0.5ms | ActiveRecord: 16.4ms)
+
+
+Started GET "/api/todos" for ::1 at 2019-10-25 15:07:20 -0700
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (1.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:8
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/api/todo/6" for ::1 at 2019-10-25 15:09:40 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/todo/6"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-10-25 15:10:13 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 98ms (Views: 98.0ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todo/6" for ::1 at 2019-10-25 15:10:19 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/todo/6"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-10-25 15:10:43 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 48ms (Views: 47.4ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todo/6" for ::1 at 2019-10-25 15:10:48 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/todo/6"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-10-25 15:12:40 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 421ms (Views: 420.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 15:13:13 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 47ms (Views: 46.4ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todo/6" for ::1 at 2019-10-25 15:13:19 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/todo/6"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-10-25 15:14:35 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 30.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 15:14:37 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 38ms (Views: 37.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 15:14:37 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 29ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todo/6" for ::1 at 2019-10-25 15:14:42 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/todo/6"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-10-25 15:15:14 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 448ms (Views: 447.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 15:15:20 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 30ms (Views: 29.8ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todos/6" for ::1 at 2019-10-25 15:15:25 -0700
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"id"=>"6", "title"=>"UPDATE", "body"=>"UPDATE", "done"=>"false"}, "id"=>"6"}
+  [1m[36mTodo Load (2.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE (6) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/todos_controller.rb:22
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 4.8ms)
+
+
+
+PG::DatatypeMismatch - ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: SELECT  "todos".* FROM "todos" WHERE (6) LIMIT $1
+                                              ^
+:
+  app/controllers/api/todos_controller.rb:22:in `update'
+
+Started GET "/" for ::1 at 2019-10-25 15:15:59 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 31ms (Views: 31.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 15:16:00 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 43ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todos/6" for ::1 at 2019-10-25 15:16:06 -0700
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"id"=>"6", "title"=>"UPDATE", "body"=>"UPDATE", "done"=>"false"}, "id"=>"6"}
+  [1m[36mTodo Load (13.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE (6) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/todos_controller.rb:22
+Started GET "/" for ::1 at 2019-10-25 15:17:18 -0700
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/appacademy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 1086ms (Views: 1085.2ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todos/6" for ::1 at 2019-10-25 15:17:27 -0700
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"id"=>"6", "title"=>"UPDATE", "body"=>"UPDATE", "done"=>"false"}, "id"=>"6"}
+  [1m[36mTodo Load (1.1ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/todos_controller.rb:22
+Completed 404 Not Found in 46910ms (ActiveRecord: 10.7ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Todo with 'id'={:id=>"6"}:
+  app/controllers/api/todos_controller.rb:22:in `update'
+
+Started GET "/api/todos" for ::1 at 2019-10-25 15:18:34 -0700
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:8
+Completed 200 OK in 32ms (Views: 16.2ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 15:19:37 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 473ms (Views: 472.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2019-10-25 15:19:44 -0700
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (1.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:8
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 15:20:24 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 35ms (Views: 34.5ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todos/6" for ::1 at 2019-10-25 15:20:33 -0700
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"id"=>"6", "title"=>"UPDATE", "body"=>"UPDATE", "done"=>"false"}, "id"=>"6"}
+Completed 500 Internal Server Error in 20037ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `todo' for #<Api::TodosController:0x00007f86174f4648>:
+  app/controllers/api/todos_controller.rb:22:in `update'
+
+Started GET "/" for ::1 at 2019-10-25 15:21:49 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 60ms (Views: 59.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 15:21:50 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 66ms (Views: 65.7ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todos/6" for ::1 at 2019-10-25 15:21:59 -0700
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"id"=>"6", "title"=>"UPDATE", "body"=>"UPDATE", "done"=>"false"}, "id"=>"6"}
+Completed 500 Internal Server Error in 16083ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `id' for #<Api::TodosController:0x00007f86176993b8>:
+  app/controllers/api/todos_controller.rb:22:in `update'
+
+Started GET "/" for ::1 at 2019-10-25 15:23:15 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 57ms (Views: 56.6ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todos/6" for ::1 at 2019-10-25 15:23:25 -0700
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"id"=>"6", "title"=>"UPDATE", "body"=>"UPDATE", "done"=>"false"}, "id"=>"6"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 2.7ms)
+
+
+
+ArgumentError - Unsupported argument type: id (Symbol):
+  app/controllers/api/todos_controller.rb:21:in `update'
+
+Started GET "/" for ::1 at 2019-10-25 15:23:55 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 36ms (Views: 35.3ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todos/6" for ::1 at 2019-10-25 15:24:02 -0700
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"id"=>"6", "title"=>"UPDATE", "body"=>"UPDATE", "done"=>"false"}, "id"=>"6"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `id' for :todo:Symbol:
+  app/controllers/api/todos_controller.rb:21:in `update'
+
+Started GET "/" for ::1 at 2019-10-25 15:24:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 48ms (Views: 47.3ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todos/6" for ::1 at 2019-10-25 15:24:15 -0700
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"id"=>"6", "title"=>"UPDATE", "body"=>"UPDATE", "done"=>"false"}, "id"=>"6"}
+Completed 500 Internal Server Error in 258ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `todo' for #<Api::TodosController:0x00007f8617318ef0>:
+  app/controllers/api/todos_controller.rb:21:in `update'
+
+Started GET "/" for ::1 at 2019-10-25 15:24:43 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 42ms (Views: 41.7ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todos/6" for ::1 at 2019-10-25 15:24:47 -0700
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"id"=>"6", "title"=>"UPDATE", "body"=>"UPDATE", "done"=>"false"}, "id"=>"6"}
+Completed 500 Internal Server Error in 320ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `todo' for #<Api::TodosController:0x00007f8613181cf8>:
+  app/controllers/api/todos_controller.rb:21:in `update'
+
+Started GET "/" for ::1 at 2019-10-25 15:24:59 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 49ms (Views: 49.1ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todos/6" for ::1 at 2019-10-25 15:25:03 -0700
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"id"=>"6", "title"=>"UPDATE", "body"=>"UPDATE", "done"=>"false"}, "id"=>"6"}
+  [1m[36mTodo Load (3.0ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/todos_controller.rb:21
+Completed 404 Not Found in 33ms (ActiveRecord: 22.2ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Todo with 'id'={:id=>"6"}:
+  app/controllers/api/todos_controller.rb:21:in `update'
+
+Started GET "/" for ::1 at 2019-10-25 15:25:33 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 61ms (Views: 60.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 15:25:34 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 42ms (Views: 42.0ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todos/1" for ::1 at 2019-10-25 15:25:39 -0700
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"id"=>"1", "title"=>"UPDATE", "body"=>"UPDATE", "done"=>"false"}, "id"=>"1"}
+  [1m[36mTodo Load (2.5ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/todos_controller.rb:21
+Completed 404 Not Found in 7ms (ActiveRecord: 2.5ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Todo with 'id'={:id=>"1"}:
+  app/controllers/api/todos_controller.rb:21:in `update'
+
+Started GET "/" for ::1 at 2019-10-25 15:25:59 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 62ms (Views: 61.2ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todos/1" for ::1 at 2019-10-25 15:26:04 -0700
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"id"=>"1", "title"=>"UPDATE", "body"=>"UPDATE", "done"=>"false"}, "id"=>"1"}
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/todos_controller.rb:21
+Completed 404 Not Found in 20ms (ActiveRecord: 10.1ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Todo with 'id'={:todo=>"1"}:
+  app/controllers/api/todos_controller.rb:21:in `update'
+
+Started GET "/" for ::1 at 2019-10-25 15:26:32 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 69ms (Views: 69.1ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todos/1" for ::1 at 2019-10-25 15:26:37 -0700
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"id"=>"1", "title"=>"UPDATE", "body"=>"UPDATE", "done"=>"false"}, "id"=>"1"}
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/todos_controller.rb:21
+Completed 404 Not Found in 22ms (ActiveRecord: 10.9ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Todo with 'id'={:id=><ActionController::Parameters {"id"=>"1", "title"=>"UPDATE", "body"=>"UPDATE", "done"=>"false"} permitted: false>}:
+  app/controllers/api/todos_controller.rb:21:in `update'
+
+Started GET "/" for ::1 at 2019-10-25 15:26:58 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 64ms (Views: 64.0ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todos/1" for ::1 at 2019-10-25 15:27:03 -0700
+
+SyntaxError - syntax error, unexpected ')', expecting ']'
+...odo.find(id: params[:todo[:id])
+...                              ^:
+  app/controllers/api/todos_controller.rb:21:in `'
+
+Started GET "/" for ::1 at 2019-10-25 15:27:14 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 56ms (Views: 55.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 15:27:15 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 45ms (Views: 44.8ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todos/1" for ::1 at 2019-10-25 15:27:19 -0700
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"id"=>"1", "title"=>"UPDATE", "body"=>"UPDATE", "done"=>"false"}, "id"=>"1"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+
+TypeError - no implicit conversion of Symbol into Integer:
+  app/controllers/api/todos_controller.rb:21:in `update'
+
+Started GET "/" for ::1 at 2019-10-25 15:28:45 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 53ms (Views: 52.4ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todos/1" for ::1 at 2019-10-25 15:28:49 -0700
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"id"=>"1", "title"=>"UPDATE", "body"=>"UPDATE", "done"=>"false"}, "id"=>"1"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `id' for :todo:Symbol:
+  app/controllers/api/todos_controller.rb:21:in `update'
+
+Started GET "/" for ::1 at 2019-10-25 15:30:23 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 45ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todos/1" for ::1 at 2019-10-25 15:30:32 -0700
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"id"=>"1", "title"=>"UPDATE", "body"=>"UPDATE", "done"=>"false"}, "id"=>"1"}
+  [1m[36mTodo Load (0.8ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/todos_controller.rb:21
+Completed 404 Not Found in 27ms (ActiveRecord: 12.8ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Todo with 'id'={:id=>nil}:
+  app/controllers/api/todos_controller.rb:21:in `update'
+
+Started GET "/" for ::1 at 2019-10-25 15:30:44 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 50ms (Views: 49.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 15:30:45 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 41ms (Views: 40.7ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todos/1" for ::1 at 2019-10-25 15:30:49 -0700
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"id"=>"1", "title"=>"UPDATE", "body"=>"UPDATE", "done"=>"false"}, "id"=>"1"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+
+TypeError - no implicit conversion of Symbol into Integer:
+  app/controllers/api/todos_controller.rb:21:in `update'
+
+Started GET "/" for ::1 at 2019-10-25 15:32:31 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 57ms (Views: 57.0ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todos/1" for ::1 at 2019-10-25 15:32:37 -0700
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"id"=>"1", "title"=>"UPDATE", "body"=>"UPDATE", "done"=>"false"}, "id"=>"1"}
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/todos_controller.rb:21
+Completed 404 Not Found in 23ms (ActiveRecord: 11.1ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Todo with 'id'={:id=>"1"}:
+  app/controllers/api/todos_controller.rb:21:in `update'
+
+Started GET "/api/todos" for ::1 at 2019-10-25 15:33:01 -0700
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (1.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:8
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/api/todos/2" for ::1 at 2019-10-25 15:33:21 -0700
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"id"=>"2", "title"=>"UPDATE", "body"=>"UPDATE", "done"=>"false"}, "id"=>"2"}
+  [1m[36mTodo Load (1.6ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/todos_controller.rb:21
+Completed 404 Not Found in 7ms (ActiveRecord: 1.6ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Todo with 'id'={:id=>"2"}:
+  app/controllers/api/todos_controller.rb:21:in `update'
+
+Started GET "/api/todos" for ::1 at 2019-10-25 15:33:41 -0700
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:8
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 15:33:54 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 47ms (Views: 46.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2019-10-25 15:33:57 -0700
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (1.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:8
+Completed 200 OK in 33ms (Views: 15.3ms | ActiveRecord: 11.0ms)
+
+
+Started PATCH "/api/todos/2" for ::1 at 2019-10-25 15:34:04 -0700
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"id"=>"2", "title"=>"UPDATE", "body"=>"UPDATE", "done"=>"false"}, "id"=>"2"}
+  [1m[36mTodo Load (1.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/todos_controller.rb:21
+Completed 404 Not Found in 6ms (ActiveRecord: 1.3ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Todo with 'id'={:id=>"2"}:
+  app/controllers/api/todos_controller.rb:21:in `update'
+
+Started GET "/" for ::1 at 2019-10-25 15:34:16 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 41ms (Views: 40.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2019-10-25 15:34:18 -0700
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:8
+Completed 200 OK in 29ms (Views: 12.4ms | ActiveRecord: 11.8ms)
+
+
+Started PATCH "/api/todos/2" for ::1 at 2019-10-25 15:34:22 -0700
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"id"=>"2", "title"=>"UPDATE", "body"=>"UPDATE", "done"=>"false"}, "id"=>"2"}
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/api/todos_controller.rb:22
+  [1m[36mTodo Load (1.8ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Todo Load (0.0ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ (byebug):1
+Completed 500 Internal Server Error in 132813ms (ActiveRecord: 2.4ms)
+
+
+
+SystemExit - exit:
+  (byebug):1:in `update'
+  app/controllers/api/todos_controller.rb:22:in `update'
+
+Started GET "/" for ::1 at 2019-10-25 15:36:45 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/appacademy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 1251ms (Views: 1250.1ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/api/todos/2" for ::1 at 2019-10-25 15:36:54 -0700
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"id"=>"2", "title"=>"UPDATE", "body"=>"UPDATE", "done"=>"false"}, "id"=>"2"}
+  [1m[36mTodo Load (0.8ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/todos_controller.rb:21
+Unpermitted parameter: :id
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/todos_controller.rb:24
+  [1m[36mTodo Update (31.1ms)[0m  [1m[33mUPDATE "todos" SET "title" = $1, "body" = $2, "updated_at" = $3 WHERE "todos"."id" = $4[0m  [["title", "UPDATE"], ["body", "UPDATE"], ["updated_at", "2019-10-25 22:37:24.293653"], ["id", 2]]
+  ↳ app/controllers/api/todos_controller.rb:24
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/todos_controller.rb:24
+Completed 200 OK in 29343ms (Views: 0.9ms | ActiveRecord: 43.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2019-10-25 15:37:33 -0700
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (2.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:8
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 15:37:57 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 51ms (Views: 50.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 15:37:58 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 47ms (Views: 46.5ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/api/todo/2" for ::1 at 2019-10-25 15:38:24 -0700
+  
+ActionController::RoutingError (No route matches [DELETE] "/api/todo/2"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-10-25 15:38:38 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 465ms (Views: 464.3ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/api/todos/2" for ::1 at 2019-10-25 15:38:43 -0700
+Processing by Api::TodosController#destroy as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/todos_controller.rb:32
+  [1m[36mTodo Destroy (2.4ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/api/todos_controller.rb:33
+Completed 200 OK in 41ms (Views: 0.8ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2019-10-25 15:38:48 -0700
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (1.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:8
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 16:28:24 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 479ms (Views: 479.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 16:28:43 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 823ms (Views: 822.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 16:28:55 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 437ms (Views: 436.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 16:28:57 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 35ms (Views: 34.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 16:30:17 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 48ms (Views: 47.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 16:30:18 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 29ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 16:30:58 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 38ms (Views: 37.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 16:30:59 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 36ms (Views: 35.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 16:31:02 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 34ms (Views: 33.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 16:31:31 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 494ms (Views: 493.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-25 16:31:33 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 46ms (Views: 46.0ms | ActiveRecord: 0.0ms)
+
+
