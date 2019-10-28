@@ -211,15 +211,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "search-bar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        value: this.state.searchTerm,
-        onChange: this.handleChange
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        type: "submit",
-        onClick: this.handleSubmit
-      }, "Search for Giphy")));
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Hello");
     }
   }]);
 
@@ -285,7 +277,7 @@ var Root = function Root(_ref) {
   var store = _ref.store;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_1__["Provider"], {
     store: store
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_giphys_search_container__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Hello"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Root);

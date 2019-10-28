@@ -24,10 +24,11 @@ class GiphySearch extends React.Component {
 
   render() {
     <div>
-      <form className="search-bar">
-          <input value={this.state.searchTerm} onChange={this.handleChange}/>
-          <button type="submit" onClick={this.handleSubmit}>Search for Giphy</button>
-      </form>
+      {/* <form className="search-bar"> */}
+          {/* <input value={this.state.searchTerm} onChange={this.handleChange}/> */}
+          {/* <button type="submit" onClick={this.handleSubmit}>Search for Giphy</button> */}
+      {/* </form> */}
+      Hello
     </div>
   }
 }
