@@ -13,10 +13,13 @@ const Greeting = (props) => {
   } 
   else {
     return (
-      <div>
-        <Link to='/signup'>Sign Up</Link>
-        <br/>
-        <Link to='/login'>Log In</Link>
+      <div className='user-auth'>
+        <div className='sign-up-link'>
+          <Link to='/signup'>Sign Up</Link>
+        </div>
+        <div className='log-in-link'>
+          <Link to='/login'>Log In</Link>
+        </div>
       </div>
     )
   }
