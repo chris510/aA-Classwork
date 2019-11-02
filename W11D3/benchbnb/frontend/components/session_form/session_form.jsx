@@ -10,9 +10,9 @@ class SessionForm extends React.Component {
     this.update = this.update.bind(this);
   }
 
-  update(input) {
+  update(p) {
     return e => this.setState({
-      [input]: e.currentTarget.value
+      [p]: e.currentTarget.value
     });
   }
 
